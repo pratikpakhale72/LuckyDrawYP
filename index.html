@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YP BOSS SATTA MATTA</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body and background styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Blurred background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/564x/17/5a/1a/175a1a8ef5fe6fd15aaf4f9faad94bb4.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Adjust the blur level as needed */
+    z-index: -1;
+}
+
+/* Container styling */
+.container {
+    position: relative;
+    text-align: center;
+    background-image: linear-gradient(rgb(221, 0, 0), rgb(105, 0, 0));
+    padding: 20px;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    width: 300px;
+    z-index: 1;
+}
+        /* Body and background styling */
+        body {
+            font-family: Arial, sans-serif;
+         
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        /* Container styling */
+        .container {
+            text-align: center;
+            background-image: linear-gradient(rgb(255, 0, 0), rgba(122, 0, 0, 0.452));
+            padding: 20px;
+            border-radius: 10px;
+            border-color: rgb(73, 73, 73);
+            width: 300px;
+        }
+        @keyframes colorChange {
+    0% {
+        color: #d0ff00; /* Initial color */
+    }
+    25% {
+        color: #00ffff; /* Cyan */
+    }
+    50% {
+        color: #ff00ff; /* Magenta */
+    }
+    75% {
+        color: #ffa500; /* Orange */
+    }
+    100% {
+        color: #d0ff00; /* Loop back to initial color */
+    }
+}
+
+        /* Title styling */
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: colorChange 5s infinite;
+
+        }
+
+        /* Item styling */
+        .item {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #ffffff;
+            
+        }
+
+        /* Subtext styling */
+        .subtext {
+            font-size: 14px;
+            animation: colorChange 5s infinite;
+        }
+
+        /* Login button */
+        .login-button {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="backImg"> <img src="C:\Users\Spidey\Desktop\html css\SATTA\Wheel.jpg" alt=""></div>-->
+    <!-- Login Button -->
+    <button class="login-button" onclick="goToLogin()">LOG IN</button>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <div class="title">YP BOSS SATTA MATTA</div>
+
+        <!-- RANI TIME Display -->
+        <div class="item">
+            RANI TIME<br>
+            <span id="raniTimeDisplay">345-23-120</span>
+            <div class="subtext">Time: 12:25 AM to 01:25 PM</div>
+        </div>
+
+        <!-- RANI MILAN Display -->
+        <div class="item">
+            RANI MILAN<br>
+            <span id="raniMilanDisplay">190-01-136</span>
+            <div class="subtext">Time: 02:25 AM to 03:25 PM</div>
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            // Redirect to login page
+            window.location.href = "login.html";  // Replace with actual login page link
+        }
+
+        // Function to load numbers from localStorage and update the display
+        function loadNumbers() {
+            // Retrieve stored numbers from localStorage
+            const raniTime = localStorage.getItem("raniTime");
+            const raniMilan = localStorage.getItem("raniMilan");
+
+            // Update the page with stored values if they exist
+            if (raniTime) {
+                document.getElementById("raniTimeDisplay").innerText = raniTime;
+            }
+            if (raniMilan) {
+                document.getElementById("raniMilanDisplay").innerText = raniMilan;
+            }
+        }
+
+        // Load numbers when the page loads
+        window.onload = loadNumbers;
+    </script>
+    <!--<img src="https://png.pngtree.com/background/20230410/original/pngtree-rainbow-curves-abstract-colorful-background-picture-image_2379642.jpg" height="100px"alt="Wheel">-->
+</body>
+</html>
